@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.build",
+  "compilerOptions": {
+    "outDir": "dist/test"
+  },
+  "exclude": [
+    ".vscode",
+    "dist",
+    "doc",
+    "node_modules"
+  ]
+}
