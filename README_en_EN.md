@@ -139,7 +139,8 @@ application gets generated, which is used for the vendor bundle:
 
 ##### Using a Plugin
 
-Imagine we want to use the custom element `my-example` from the `example` feature of this plugin skeleton. The corressponding view will look like this:
+Imagine we want to use the custom element `my-example` from the `example` feature of this
+plugin skeleton. The corressponding view will look like this:
 
 ```html
 <template>
@@ -149,6 +150,8 @@ Imagine we want to use the custom element `my-example` from the `example` featur
 </template>
 ```
 
-There is a possibility to register all or some of the components in a Plugin globally. This way they don't need to be `required` in the view, we want to use them.
+There is a possibility to register all or some of the components in a Plugin globally.
+This way they don't need to be `required` in the view, we want to use them.
 
-However, this approach is not a general solution and should be used with care, since it could lead to name-conflicts if your are not using name-conventions to avoid them.
+However, this approach is not a general solution and should be used with care, since it could 
+lead to name-conflicts if your are not using name-conventions to avoid them.
