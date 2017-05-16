@@ -72,7 +72,7 @@ Die Aurelia CLI kümmert sich automatisch darum das Plugin in das Bundling einzu
 
 Nach dem Import des Plugins wird in der `aurelia.json` der Aurelia Applikation ein Eintrag für das Vendor Bundle erzeugt:
 
-```
+```JSON
 "dependencies": [
   {
     "name": "aurelia_plugin_skeleton",
@@ -96,7 +96,6 @@ Es ist außerdem darauf zu achten, dass alle Ressourcen, die aus dem Plugin verw
 Anschließend muss das Plugin im Haupteinstiegspunkt der Aurelia Applikation (regulär `main.ts`) eingetragen werden, damit es beim Starten der Anwendung geladen wird.
 
 ```typescript
-
 export function configure(aurelia: Aurelia) {
   aurelia.use
     .standardConfiguration()
@@ -104,7 +103,6 @@ export function configure(aurelia: Aurelia) {
 
   aurelia.start().then(() => aurelia.setRoot());
 }
-
 ```
 
 ##### 3.2.1.2 Manuelles Setup
@@ -115,7 +113,7 @@ Um Aurelia mit Webpack zu verwenden sollte sichergestellt werden, dass in der `p
 
 Der Konfigurationsblock in der `package.json` sieht wie folgt aus:
 
-```
+```JSON
   "aurelia": {
     "build": {
       "resources": [
