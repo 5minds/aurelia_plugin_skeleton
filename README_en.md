@@ -23,12 +23,12 @@ These components are sorted in appropriate directories.
 For features within the plugin, a feature folder gets created, which
 is named analogously to the feature's name.
 Components, which are solely implemented for one feature, are stored in the
-feature folder (see [2.1 Components](#21-components) for folder structure).
+feature folder (see seccion [Components](#components) for folder structure).
 
 #### Reusable components
 
-Reusable components are stored in the `ressources` folder (see
-[2.1 Components](#21-components) for folder structure).
+Reusable components are stored in the `ressources` folder (see section
+[Components](#components) for folder structure).
 Components which are stored here can be referenced in feature components.
 
 ### Styles
@@ -41,8 +41,8 @@ feature folder.
 #### Styles for reusable components
 
 Styles, which are valid for a reusable component (e.g a custom element), are
-stored directly next to the implementation of the component (see
-[2.1.2 Reusable components](#212-reusable-components)).
+stored directly next to the implementation of the component (see section
+[Reusable components](#reusable-components)).
 
 #### Reusable styles
 
@@ -147,8 +147,8 @@ Imagine we want to use the custom element `my-example` from the `example` featur
 
   <my-example-tag></my-example-tag>
 </template>
-````
+```
 
 There is a possibility to register all or some of the components in a Plugin globally. This way they don't need to be `required` in the view, we want to use them.
 
-However, this approach is not a general solution and should be used with care, since it could lead to name-conflicts if your are not using name-conventions to avoid them. 
+However, this approach is not a general solution and should be used with care, since it could lead to name-conflicts if your are not using name-conventions to avoid them.
