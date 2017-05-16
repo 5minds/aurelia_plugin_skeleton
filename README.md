@@ -2,7 +2,7 @@
 
 ## 1 Übersicht
 
-Dieses Projekt ist eine Implementierungsvorlage Aurelia Plugins.
+Dieses Projekt ist eine Implementierungsvorlage für Aurelia Plugins.
 Es dient dazu Features einer Aurelia Applikation gekapselt als Plugin entwickeln zu können, sodass sie von einer Aurelia Applikation konsumiert werden können.
 
 ## 2 Struktur
@@ -20,11 +20,11 @@ Diese Komponenten werden in entsprechend benannten Ordnern einsortiert.
 #### 2.1.1 Feature Komponenten
 
 Für Features innerhalb des Plugins wird ein Feature-Ordner erstellt, der analog zum Namen des Features benannt wird.
-Komponenten, die lediglich für ein einzelne Feature implementiert werden, werden im Feature Ordner (Ordnerstruktur siehe `2.1 Komponenten`) abgelegt.
+Komponenten, die lediglich für ein einzelnes Feature implementiert werden, werden im Feature Ordner (Ordnerstruktur siehe `2.1 Komponenten`) abgelegt.
 
 #### 2.1.2 Wiederverwendbare Komponenten
 
-Wiederverwendbare Komponenten werden im Ordner `resources` (Ordnerstruktur siehe `2.1 Komponenten`) abgelegt.
+Wiederverwendbare Komponenten werden im Ordner `resources` abgelegt. In diesem Ordner findet sich ebenfalls die Ordnerstruktur aus `2.1 Komponenten` wieder.
 Hierin abgelegte Komponenten können in Feature Komponenten referenziert werden.
 
 ### 2.2 Styles
@@ -60,50 +60,13 @@ npm run build:amd
 
 #### 3.2.1 Automatische Einbindung mit Aurelia CLI
 
-Wurde das Plugin auf npm gepublished kann es einfach mit dem folgenden Befehl importiert werden:
+Wurde das Plugin auf npm gepublished kann es einfach mit dem folgenden Befehl installiert und importiert werden:
 
 ```
 au install @5minds/my-plugin
 ```
 
 Die Aurelia CLI kümmert sich automatisch darum das Plugin in das Bundling einzutragen.
-
-Anschließend muss das Plugin im Haupteinstiegspunkt der Aurelia Applikation (regulär `main.ts`) eingetragen werden, damit es beim Starten der Anwendung geladen wird.
-
-```typescript
-
-export function configure(aurelia: Aurelia) {
-  aurelia.use
-    .standardConfiguration()
-    .plugin('my-plugin');  << this is our plugin
-
-  aurelia.start().then(() => aurelia.setRoot());
-}
-
-```
-
-#### 3.2.2 Manuelles Setup
-
-##### 3.2.2.1 Webpack Support
-
-Um Aurelia mit Webpack zu verwenden sollte sichergestellt werden, dass in der `package.json` des Plugins die Aurelia build resources map gepflegt wird. Diese teilt dem Transpiler mit, welche Inhalte im Bundle inkludiert werden.
-
-Der Konfigurationsblock in der `package.json` sieht wie folgt aus:
-
-```
-  "aurelia": {
-    "build": {
-      "resources": [
-        "components/test.html",
-        "components/test.js"
-      ]
-    }
-  }
-```
-
-##### 3.2.2.2 Aurelia CLI Support
-
-Beim bauen des Plugins wird ein AMD Modul exportiert, das die Aurelia CLI verwenden kann.
 
 Nach dem Import des Plugins wird in der `aurelia.json` der Aurelia Applikation ein Eintrag für das Vendor Bundle erzeugt:
 
@@ -116,4 +79,37 @@ Nach dem Import des Plugins wird in der `aurelia.json` der Aurelia Applikation e
     "env": "dev"
   }
 ]
+```
+
+Anschließend muss das Plugin im Haupteinstiegspunkt der Aurelia Applikation (regulär `main.ts`) eingetragen werden, damit es beim Starten der Anwendung geladen wird.
+
+```typescript
+
+export function configure(aurelia: Aurelia) {
+  aurelia.use
+    .standardConfiguration()
+    .plugin('my-plugin');  << unser Beispielplugin
+
+  aurelia.start().then(() => aurelia.setRoot());
+}
+
+```
+
+#### 3.2.2 Manuelles Setup
+
+##### 3.2.2.1 Webpack Support
+
+Um Aurelia mit Webpack zu verwenden sollte sichergestellt werden, dass in der `package.json` des Plugins die Aurelia build resources map gepflegt wird. Diese teilt dem Transpiler mit, welche Inhalte im Bundle inkludiert werden sollen.
+
+Der Konfigurationsblock in der `package.json` sieht wie folgt aus:
+
+```
+  "aurelia": {
+    "build": {
+      "resources": [
+        "components/test.html",
+        "components/test.js"
+      ]
+    }
+  }
 ```
