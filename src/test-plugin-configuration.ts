@@ -1,6 +1,6 @@
 import { Container } from 'aurelia-dependency-injection';
-import { AbstractBaseService } from './base-service';
-import { StandardService } from './standard-service';
+import { AbstractBaseService } from './example/base-service';
+import { StandardService } from './example/standard-service';
 
 export class TestPluginConfiguration {
   private serviceType: { new (...args: any[]): AbstractBaseService } = StandardService;
