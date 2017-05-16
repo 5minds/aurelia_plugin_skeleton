@@ -58,7 +58,9 @@ npm run build:amd
 
 ### 3.2 Einbindung in Aurelia Applikation
 
-#### 3.2.1 Automatische Einbindung mit Aurelia CLI
+#### 3.2.1 Installation / Import
+
+##### 3.2.1.1 Automatische Einbindung mit Aurelia CLI
 
 Wurde das Plugin auf npm gepublished kann es einfach mit dem folgenden Befehl installiert und importiert werden:
 
@@ -95,9 +97,9 @@ export function configure(aurelia: Aurelia) {
 
 ```
 
-#### 3.2.2 Manuelles Setup
+##### 3.2.1.2 Manuelles Setup
 
-##### 3.2.2.1 Webpack Support
+###### 3.2.1.2.1 Webpack Support
 
 Um Aurelia mit Webpack zu verwenden sollte sichergestellt werden, dass in der `package.json` des Plugins die Aurelia build resources map gepflegt wird. Diese teilt dem Transpiler mit, welche Inhalte im Bundle inkludiert werden sollen.
 
@@ -113,3 +115,22 @@ Der Konfigurationsblock in der `package.json` sieht wie folgt aus:
     }
   }
 ```
+
+#### 3.2.1 Verwendung von Komponenten eines Plugins
+
+Stellen wir uns vor eine Aurelia Applikation möchte das Custom Element `my-example` aus dem `example` Feature dieses Plugin Skeletons verwenden.
+
+Die zugehörige View sieht dann wie folgt aus:
+
+```html
+<template>
+  <require from="aurelia_plugin_skeleton/example/elements/my-example"></require>
+
+  <my-example-tag></my-example-tag>
+</template>
+
+```
+
+Es besteht auch die Möglichkeiten alle oder einzelne Komponenten eines Plugins global zu registrieren, sodass die zugehörigen Tags (in diesem Beispiel `my-example-tag`) in einer View verwendet werden können ohne sie zu importieren.
+
+Diese Vorgehensweise ist aber nicht als grundsätzliche Lösung empfehlenswert, da es durch die globale Registrierung zu Namenskonflikten kommen kann. Diese Möglichkeit sollte daher sparsam verwendet werden oder einer Namenskonvention folgen, die Namenskonflikte verhindert.
