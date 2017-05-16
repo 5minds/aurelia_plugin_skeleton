@@ -75,13 +75,23 @@ Nach dem Import des Plugins wird in der `aurelia.json` der Aurelia Applikation e
 ```
 "dependencies": [
   {
-    "name": "my-plugin",
-    "path": "../node_modules/@5minds/my-plugin/dist/amd",
+    "name": "aurelia_plugin_skeleton",
+    "path": "../node_modules/@5minds/aurelia_plugin_skeleton/dist/amd",
     "main": "index",
-    "env": "dev"
+    "env": "dev",
+    "resources": [
+      "example/elements/my-example.html",
+      "example/elements/my-example.js"
+    ]
   }
 ]
 ```
+
+> ACHTUNG!: Bei privaten npm Paketen (gescoped - im Beispiel `@5minds`) kann es zu Problemen beim automatischen Import des Plugins kommen.
+
+> PROBLEME BEIM IMPORT?:
+In einigen Fällen kann der automatische Import des Plugins durch die Aurelia CLI fehlschlagen. Der Eintrag in der `aurelia.json` muss dann manuell hinzugefügt werden.
+Es ist außerdem darauf zu achten, dass alle Ressourcen, die aus dem Plugin verwendet werden sollen, hier eingetragen werden müssen. Dies ist erforderlich, damit sie im Bundle der Aurelia Applikation enthalten sind und verwendet werden können.
 
 Anschließend muss das Plugin im Haupteinstiegspunkt der Aurelia Applikation (regulär `main.ts`) eingetragen werden, damit es beim Starten der Anwendung geladen wird.
 
@@ -90,7 +100,7 @@ Anschließend muss das Plugin im Haupteinstiegspunkt der Aurelia Applikation (re
 export function configure(aurelia: Aurelia) {
   aurelia.use
     .standardConfiguration()
-    .plugin('my-plugin');  << unser Beispielplugin
+    .plugin('aurelia_plugin_skeleton');  << unser Beispielplugin
 
   aurelia.start().then(() => aurelia.setRoot());
 }
