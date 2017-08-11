@@ -1,12 +1,29 @@
 {
-  "extends": "./tsconfig.build",
+  "compileOnSave": false,
   "compilerOptions": {
-    "outDir": "dist/test"
+    "sourceMap": true,
+    "outDir": "dist/amd",
+    "target": "es5",
+    "experimentalDecorators": true,
+    "noImplicitAny": false,
+    "module": "amd",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "moduleResolution": "node",
+    "lib": [
+      "es2016",
+      "dom"
+    ]
   },
+  "include": [
+    "src/**/*.ts"
+  ],
   "exclude": [
     ".vscode",
     "dist",
     "doc",
-    "node_modules"
+    "node_modules",
+    "test"
   ]
 }

@@ -8,9 +8,6 @@ define(["require", "exports", "./example/base-service", "./example/standard-serv
         TestPluginConfiguration.prototype.customService = function (type) {
             this.serviceType = type;
         };
-        /**
-         * Applies the configuration.
-         */
         TestPluginConfiguration.prototype.apply = function (container) {
             var service = container.get(this.serviceType);
             container.registerInstance(base_service_1.AbstractBaseService, service);
@@ -19,3 +16,5 @@ define(["require", "exports", "./example/base-service", "./example/standard-serv
     }());
     exports.TestPluginConfiguration = TestPluginConfiguration;
 });
+
+//# sourceMappingURL=test-plugin-configuration.js.map
