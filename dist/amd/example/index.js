@@ -8,3 +8,5 @@ define(["require", "exports", "./base-service", "./special-service", "./standard
     __export(special_service_1);
     __export(standard_service_1);
 });
+
+//# sourceMappingURL=index.js.map

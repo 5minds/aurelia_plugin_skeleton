@@ -10,3 +10,5 @@ define(["require", "exports", "./test-plugin-configuration"], function (require,
     }
     exports.configure = configure;
 });
+
+//# sourceMappingURL=test-plugin.js.map

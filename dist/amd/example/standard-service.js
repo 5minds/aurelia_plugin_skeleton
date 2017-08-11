@@ -23,3 +23,5 @@ define(["require", "exports", "./base-service"], function (require, exports, bas
     }(base_service_1.AbstractBaseService));
     exports.StandardService = StandardService;
 });
+
+//# sourceMappingURL=standard-service.js.map
