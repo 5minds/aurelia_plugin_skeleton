@@ -18,9 +18,6 @@ define(["require", "exports", "aurelia-framework"], function (require, exports, 
             aurelia_framework_1.bindable(),
             __metadata("design:type", String)
         ], MyExample.prototype, "something", void 0);
-        MyExample = __decorate([
-            aurelia_framework_1.customElement('my-example-tag')
-        ], MyExample);
         return MyExample;
     }());
     exports.MyExample = MyExample;
