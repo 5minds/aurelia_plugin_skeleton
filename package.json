@@ -65,13 +65,10 @@
     "build": {
       "resources": [
         "example/base-service.js",
-        "example/elements/my-example.html",
-        "example/elements/my-example.js",
+        "example/resources/elements/my-example.html",
+        "example/resources/elements/my-example.js",
         "example/special-service.js",
-        "example/standard-service.js",
-        "resources/elements/test.css",
-        "resources/elements/test.html",
-        "resources/elements/test.js"
+        "example/standard-service.js"
       ]
     }
   }
