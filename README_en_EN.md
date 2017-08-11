@@ -64,7 +64,7 @@ We need the module format `AMD` to consume the plugin in an Aurelia application.
 Therefore you need to use this command:
 
 ```
-$ npm run build:amd
+$ npm run build
 ```
 
 ### Integrate in an Aurelia application
@@ -153,5 +153,5 @@ plugin skeleton. The corressponding view will look like this:
 There is a possibility to register all or some of the components in a Plugin globally.
 This way they don't need to be `required` in the view, we want to use them.
 
-However, this approach is not a general solution and should be used with care, since it could 
+However, this approach is not a general solution and should be used with care, since it could
 lead to name-conflicts if your are not using name-conventions to avoid them.
