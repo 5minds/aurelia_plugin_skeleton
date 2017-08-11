@@ -4,20 +4,26 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
 define(["require", "exports", "aurelia-framework"], function (require, exports, aurelia_framework_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
     var Test = (function () {
         function Test() {
-            this.something = 'testing works';
+            this.something = 'Test works';
         }
+        __decorate([
+            aurelia_framework_1.bindable(),
+            __metadata("design:type", String)
+        ], Test.prototype, "something", void 0);
+        Test = __decorate([
+            aurelia_framework_1.customElement('test-the-plugin')
+        ], Test);
         return Test;
     }());
-    __decorate([
-        aurelia_framework_1.bindable
-    ], Test.prototype, "something", void 0);
-    Test = __decorate([
-        aurelia_framework_1.customElement('test-the-plugin')
-    ], Test);
     exports.Test = Test;
 });
+
+//# sourceMappingURL=test.js.map

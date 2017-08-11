@@ -11,3 +11,5 @@ define(["require", "exports"], function (require, exports) {
     }());
     exports.AbstractBaseService = AbstractBaseService;
 });
+
+//# sourceMappingURL=base-service.js.map

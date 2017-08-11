@@ -53,7 +53,7 @@ Diese Klasse folgt der Aurelia Konvention zur Konfiguration von Plugins.
 Zum Bauen des Plugins wird das in der `package.json` hinterlegte Skript verwendet. Wir benötigen das Modulformat `AMD`, um das Plugin in der Aurelia Applikation konsumieren zu können, daher lautet der Befehl:
 
 ```
-npm run build:amd
+npm run build
 ```
 
 ### 3.2 Einbindung in Aurelia Applikation

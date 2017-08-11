@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../src/test-plugin.ts"],"names":[],"mappings":";;;IAGA,mBAA0B,eAAuC,EAAE,QAAoD;QAErH,IAAM,MAAM,GAAG,IAAI,mDAAuB,EAAE,CAAC;QAE7C,EAAE,CAAC,CAAC,QAAQ,YAAY,QAAQ,CAAC,CAAC,CAAC;YACjC,QAAQ,CAAC,MAAM,CAAC,CAAC;QACnB,CAAC;QAED,MAAM,CAAC,KAAK,CAAC,eAAe,CAAC,SAAS,CAAC,CAAC;IAC1C,CAAC;IATD,8BASC","file":"test-plugin.js","sourceRoot":"../../src"}
